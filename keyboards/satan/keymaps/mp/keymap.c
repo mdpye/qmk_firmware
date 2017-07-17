@@ -34,10 +34,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_TRNS, KC_TRNS, KC_TRNS,             KC_MUTE,                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
 };
 
-const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
-{
-    return MACRO_NONE;
-};
-
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
 }
