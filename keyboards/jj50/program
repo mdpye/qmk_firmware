@@ -29,7 +29,9 @@ print('Searching for ps2avrGB... ', end='')
 
 dev = usb.core.find(idVendor=0x20A0, idProduct=0x422D)
 if dev is None:
-    raise ValueError('Device not found')
+    dev = usb.core.find(idVendor=0x16c0, idProduct=0x05df)
+    if dev is None:
+        raise ValueError('Device not found')
 
 print('Found', end='\n\n')
 
@@ -70,5 +72,5 @@ time.sleep(2)
 
 print('OK')
 print('Programming...')
-if os.system('bootloadHID -r "%s"' % sys.argv[1]) == 0:
+if os.system('/home/mp/.local/bin/bootloadHID -r "%s"' % sys.argv[1]) == 0:
     print('\nDone!')
