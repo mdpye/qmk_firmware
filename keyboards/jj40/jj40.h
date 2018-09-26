@@ -86,7 +86,6 @@ void matrix_init_user(void);  // TODO port this to other PS2AVRGB boards
 		KC_##k30, KC_##k31, KC_##k32, KC_##k33, KC_##k34, KC_##k35, KC_##k36, KC_##k37, KC_##k38, KC_##k39, KC_##k3a, KC_##k3b  \
 )
 
-
 #define KEYMAP LAYOUT_kc_ortho_4x12
 
 #endif
