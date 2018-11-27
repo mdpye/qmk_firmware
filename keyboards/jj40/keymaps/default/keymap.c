@@ -13,6 +13,12 @@ enum custom_keycodes {
   RAISE,
 };
 
+#define LOWER MO(_LOWER)
+#define RAISE MO(_RAISE)
+#define FNS MO(_FN)
+#define WD_LEFT LCTL(KC_LEFT)
+#define WD_RIGHT LCTL(KC_RIGHT)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Qwerty
  * ,-----------------------------------------------------------------------------------.
@@ -26,10 +32,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = KEYMAP( \
-  KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,      KC_T,    KC_Y,    KC_U,      KC_I,    KC_O,    KC_P,    KC_BSPC, \
-  KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,      KC_G,    KC_H,    KC_J,      KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
-  KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,      KC_B,    KC_N,    KC_M,      KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
-  KC_LCTL, MO(_FN), KC_LGUI, KC_LALT, MO(_LOWER),KC_SPC,  KC_SPC,  MO(_RAISE),KC_RGUI, KC_RALT, KC_RCTL, KC_ENT \
+  KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,      KC_T,   KC_Y,  KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC, \
+  KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,      KC_G,   KC_H,  KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
+  KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,      KC_B,   KC_N,  KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
+  KC_LCTL, FNS, KC_LGUI, KC_LALT, LOWER, KC_SPC, KC_ENT, RAISE, KC_RGUI, KC_RALT, KC_RCTL, KC_ENT \
 ),
 
 /* Raise
@@ -62,10 +68,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = KEYMAP( \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME,       KC_PGDN, KC_PGUP, KC_END,        XXXXXXX, KC_DEL, \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT,       KC_DOWN, KC_UP,   KC_RIGHT,      XXXXXXX, XXXXXXX, \
-  _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LCTL(KC_LEFT), KC_PGDN, KC_PGUP, LCTL(KC_RGHT), XXXXXXX, _______, \
-  _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX,       _______, _______, _______,       _______, _______ \
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,   XXXXXXX, KC_DEL, \
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, XXXXXXX, XXXXXXX, \
+  _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, WD_LEFT, KC_PGDN, KC_PGUP, WD_RIGHT, XXXXXXX, _______, \
+  _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, _______, _______, _______,  _______, _______ \
 ),
 
 /* Brackets
