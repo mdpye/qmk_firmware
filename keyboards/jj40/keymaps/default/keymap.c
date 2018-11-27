@@ -12,6 +12,8 @@ enum custom_keycodes {
   RAISE,
 };
 
+#define KEYMAP LAYOUT_ortho_4x12
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Qwerty
  * ,-----------------------------------------------------------------------------------.
