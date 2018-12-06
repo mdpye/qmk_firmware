@@ -133,11 +133,11 @@ void eeconfig_update_rgblight(uint32_t val) {
 }
 void eeconfig_update_rgblight_default(void) {
   //dprintf("eeconfig_update_rgblight_default\n");
-  rgblight_config.enable = 1;
+  rgblight_config.enable = 0;
   rgblight_config.mode = RGBLIGHT_MODE_STATIC_LIGHT;
   rgblight_config.hue = 0;
-  rgblight_config.sat = 255;
-  rgblight_config.val = RGBLIGHT_LIMIT_VAL;
+  rgblight_config.sat = 0;
+  rgblight_config.val = RGBLIGHT_LIMIT_VAL / 5;
   rgblight_config.speed = 0;
   eeconfig_update_rgblight(rgblight_config.raw);
 }
