@@ -1,4 +1,4 @@
-#include "satan.h"
+#include QMK_KEYBOARD_H
 
 #define _DEF 0
 #define _FN  1
