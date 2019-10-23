@@ -6,6 +6,8 @@
 
 #define SHFT_A MT(MOD_LSFT, KC_A)
 #define SHFT_L MT(MOD_RSFT, KC_L)
+#define SHFT_GRV MT(MOD_LSFT, KC_GRV)
+#define SHFT_HSH MT(MOD_RSFT, KC_NONUS_HASH)
 
 #define CTRL_Z MT(MOD_LCTL, KC_Z)
 #define CTRL_M MT(MOD_RCTL, KC_M)
@@ -40,20 +42,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /*
      * +--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
-     * | Esc    |        |        |        |        |        |        |        |        | BkSpc  |
+     * | Esc    |        |        |        |        | Home   | PgDn   | PgUp   | End    | BkSpc  |
      * +-+------+-+------+-+------+-+------+-+------+-+------+-+------+-+------+-+------+-+------+
-     *   | Tab    |        |        |        |        |        |        |        |        |
+     *   | Tab    |        |        |        |        | Left   | Down   | Up     | Right  |
      *   +----+---+----+---+----+---+----+---+----+---+----+---+----+---+----+---+--------+
-     *        |        |        |        |        |        |        |        |
+     *        | Enter  |        |        |        |        |        |        |
      *        +--------+------+-+--------+--------+--------+--------+--------+---+
      *                        |                                                  |
      *                        +--------------------------------------------------+
      */
 
     [_RAISE] = LAYOUT( \
-            KC_ESC, KC_MUTE, KC_NO, KC_NO, KC_NO, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_BSPC, 
-            KC_TAB, RGB_TOG, RGB_VAD, RGB_VAI, RGB_MOD, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, 
-            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+            KC_ESC,  KC_MUTE, XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_BSPC,
+            KC_TAB,  RGB_TOG, RGB_VAD, RGB_VAI, RGB_MOD, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+            KC_ENT,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_NO,
             KC_NO
         ),
 
@@ -68,26 +70,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                        |                                                  |
      *                        +--------------------------------------------------+
      */
+
     [_SYM] = LAYOUT( \
-        KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, 
-        KC_GRV, KC_BSLS, KC_MINS, KC_EQL, KC_LBRC, KC_RBRC, KC_SCLN, KC_QUOT, KC_ENT, 
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_COMM, KC_DOT, KC_SLSH,
-        KC_NO
+            KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,
+            SHFT_GRV, KC_BSLS,  KC_MINS,  KC_EQL,   KC_LBRC,  KC_RBRC,  KC_SCLN,  KC_QUOT,  SHFT_HSH,
+            XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_COMM,  KC_DOT,   KC_SLSH,
+            KC_NO
         ),
 
-    /*
-     * +--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
-     * |        |        |        |        |        |        |        |        |        |        |
-     * +-+------+-+------+-+------+-+------+-+------+-+------+-+------+-+------+-+------+-+------+
-     *   |        |        |        |        |        |        |        |        |        |
-     *   +----+---+----+---+----+---+----+---+----+---+----+---+----+---+----+---+--------+
-     *        |        |        |        |        |        |        |        |
-     *        +--------+------+-+--------+--------+--------+--------+--------+---+
-     *                        |                                                  |
-     *                        +--------------------------------------------------+
-     */
 };
-
-
-
-
