@@ -16,6 +16,10 @@ enum planck_layers {
 
 #define KC_WDLF LALT(KC_LEFT)
 #define KC_WDRT LALT(KC_RIGHT)
+#define XX_PGUP LGUI(KC_UP)
+#define XX_PGDN LGUI(KC_DOWN)
+#define XX_HOME LGUI(KC_LEFT)
+#define XX_END LGUI(KC_RIGHT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -67,9 +71,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_ortho_4x12( \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  XXXXXXX, KC_DEL, \
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XX_HOME, XX_PGDN, XX_PGUP, XX_END,  XXXXXXX, KC_DEL, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX, \
-  _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_WDLF, KC_PGDN, KC_PGUP, KC_WDRT, XXXXXXX, _______, \
+  _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_WDLF, XX_PGDN, XX_PGUP, KC_WDRT, XXXXXXX, _______, \
   _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______ \
 ),
 
