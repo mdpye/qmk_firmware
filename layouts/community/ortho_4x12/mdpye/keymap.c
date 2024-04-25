@@ -18,6 +18,11 @@ enum extra_keycodes {
   MAC
 };
 
+#ifdef AUDIO_ENABLE
+float linux_song[][2] = SONG(QWERTY_SOUND);
+float mac_song[][2] = SONG(DVORAK_SOUND);
+#endif
+
 #define LOWER MO(_LOWER_LINUX)
 #define RAISE MO(_RAISE_LINUX)
 #define LOW_M MO(_LOWER_MAC)
@@ -182,11 +187,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case LINUX:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_QWERTY_LINUX);
+#ifdef AUDIO_ENABLE
+        PLAY_SONG(linux_song);
+#endif
       }
       return false; // Skip all further processing of this key
     case MAC:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_QWERTY_MAC);
+#ifdef AUDIO_ENABLE
+        PLAY_SONG(mac_song);
+#endif
       }
       return false; // Skip all further processing of this key
     default:
